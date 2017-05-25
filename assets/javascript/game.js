@@ -1,52 +1,53 @@
-<!DOCTYPE js>
-document.write("yooooo")
-var compChoice = ['r', 'p', 's'];
+  //variables
+    var compChoice = ['a' , 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r' , 's', 't' , 'u', 'v', 'w', 'x', 'y', 'z'];
     var userWin = 0;
     var userLoss = 0;
-    var userTie = 0;
-    var userChoice = document.getElementById("user-choice");
+    var userChoice = document.getElementById("lettersUsed");
+    var lettersUsed = [];
+    var guesses=10;
     var rand = "";
   
     // Whenever a key is pressed, alert "pressed a button".
     document.onkeyup = function(event) {
-      var compGuess = compChoice[Math.floor(Math.random() * compChoice.length)];
+      //creating a random letter for the computer choice
+      var compGuess   = compChoice[Math.floor(Math.random() * compChoice.length)];
+      //making the user guess the input
       var userGuess = event.key;
+
+
+    //+ win or + - guess
+      if ( userGuess ==  compGuess) {
+          userWin++;
+          console.log(guesses =10);
+          console.log('Win');
+   
+
+      }
+      else {
+        console.log(--guesses);
+        console.log("wrong");
+        //sconsole.loguserChoice.push(lettersUsed);
+        
+      }
+     
+      
     
-      if ( userGuess == "r" && compGuess == "r") {
-          console.log('Tie');
-          document.getElementById("tieCount").innerHTML = userTie++;
-      }
-      else if (userGuess == "r" && compGuess== "s"){
-        console.log('WIN');
-        document.getElementById("winCount").innerHTML = userWin++;
-      }
-      else if (userGuess == "r" && compGuess== "p") {
-        console.log("LOSS")
-        document.getElementById("lossCount").innerHTML = userLoss++;
-      }
-      else  if ( userGuess == "s" && compGuess == "s") {
-          console.log('Tie');
-          document.getElementById("tieCount").innerHTML = userTie++;
-        }
-      else if (userGuess == "s" && compGuess== "p"){
-        console.log('WIN');
-        document.getElementById("winCount").innerHTML = userWin++;
-      }
-      else if (userGuess == "s" && compGuess== "r") {
-        console.log("LOSS")
-        document.getElementById("lossCount").innerHTML = userLoss++;
-      }
-      else if ( userGuess == "p" && compGuess == "p") {
-          console.log('Tie');
-          document.getElementById("tieCount").innerHTML = userTie++;
-      }
-      else if (userGuess == "p" && compGuess== "r"){
-        console.log('WIN');
-        document.getElementById("winCount").innerHTML = userWin++;
-      }
-      else if (userGuess == "p" && compGuess== "s") {
-        console.log("LOSS")
-        document.getElementById("lossCount").innerHTML = userLoss++;
-      }
-    };
-    </js>
+
+    //wrong cap
+    if (guesses = 0){
+
+      guesses = [];
+      userLoss++;
+
+      console.log('Loss');
+    }
+  }
+
+  
+    //if ( userWrong <=   )
+
+    // correct answer input
+  //   if(event.key != ('a' , 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r' , 's', 't' , 'u', 'v', 'w', 'x', 'y', 'z')){
+  //     alert("STOP MESSIN");
+  //   }
+  // }

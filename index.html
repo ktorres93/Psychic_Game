@@ -2,43 +2,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <script src= "assets/javascript/game.js"></script>
     <meta charset="UTF-8">
     <title>Psychic Game</title>
+      <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
+  
   <body>
       <div id="game">
-      <p>Wins: </p><p id="winCount"> </p>
-      <p>Losses: </p><p id="lossCount"> </p>
+      <p>Losses: </p><p id="userLoss"> </p>
+      <p> Guesses:  </p><p id="guesses"></p>
+      <p> Letters used: </p> <p id="lettersUsed"></p>
     </div>
 
-      <script type="text/javascript">
-    var compChoice = ['a' , 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r' , 's', 't' , 'u', 'v', 'w', 'x', 'y', 'z'];
-    var userWin = 0;
-    var userLoss = 0;
-    var userChoice = document.getElementById("user-choice");
-    var rand = "";
-  
-    // Whenever a key is pressed, alert "pressed a button".
-    document.onkeyup = function(event) {
-      var compGuess = compChoice[Math.floor(Math.random() * compChoice.length)];
-      var userGuess = event.key;
-    // console logging choices? v 
-
-
-
-    //+ win or +loss 
-      if ( userGuess ==  compGuess) {
-          console.log('Win');
-          document.getElementById("winCount").innerHTML = userWin++;
-      }
-      else if (userGuess !== compGuess){
-        console.log('Loss');
-        document.getElementById("lossCount").innerHTML = userLoss++;
-    };
-
-    //loss cap
-
-    //termination of game if right answer
-    </script>
   </body>
 </html>
