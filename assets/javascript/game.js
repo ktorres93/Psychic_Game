@@ -4,28 +4,34 @@
     var userLoss = 0;
     var userChoice = document.getElementById("lettersUsed");
     var lettersUsed = [];
-    var guesses=10;
+    var guesses  = 10;
     var rand = "";
   
     // Whenever a key is pressed, alert "pressed a button".
     document.onkeyup = function(event) {
       //creating a random letter for the computer choice
-      var compGuess   = compChoice[Math.floor(Math.random() * compChoice.length)];
       //making the user guess the input
       var userGuess = event.key;
 
-
+      if( guesses === 10) {
+        var compGuess = compChoice[Math.floor(Math.random() * compChoice.length)];
+        console.log("compGuess " + compGuess)
+      }
     //+ win or + - guess
-      if ( userGuess ==  compGuess) {
+      if ( userGuess ===  compGuess) {
           userWin++;
-          console.log(guesses =10);
-          console.log('Win');
-   
+          guesses = 10;
+          lettersUsed = [];
+          document.getElementById("userWin").innerHTML = userWin;
+
 
       }
       else {
-        console.log(--guesses);
-        console.log("wrong");
+        guesses--;
+        document.getElementById("Guesses").innerHTML = guesses;
+        lettersUsed.push(userGuess);
+        document.getElementById("lettersUsed").innerHTML = lettersUsed;
+        console.log(guesses);
         //sconsole.loguserChoice.push(lettersUsed);
         
       }
@@ -34,16 +40,21 @@
     
 
     //wrong cap
-    if (guesses = 0){
+    if (guesses === 0){
 
-      guesses = [];
+      guesses = 10;
+      lettersUsed = [];
       userLoss++;
-
-      console.log('Loss');
-    }
-  }
-
+      document.getElementById("userLoss").innerHTML = userLoss;
   
+    }
+          console.log('Loss' + userLoss);
+            console.log("guesses" + guesses);
+          console.log('Win'+ userWin);
+          console.log("lettersUsed"+ lettersUsed);
+          console.log("userGuess" + userGuess);
+
+  }
     //if ( userWrong <=   )
 
     // correct answer input
